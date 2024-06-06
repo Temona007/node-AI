@@ -1,10 +1,11 @@
-require('dotenv').config({ path: './config.env' });
-
-const port = process.env.PORT || 4242;
+// require('dotenv').config({ path: './config.env' });
+require('dotenv').config();
 
 const express = require('express');
-const path = require('path');
-const app = express();
+const path    = require('path');
+const app     = express();
+// const port    = 3000;
+const port = process.env.PORT || 4242;
 
 
 // Serve static files from the React app's build directory
@@ -21,9 +22,9 @@ app.get('*', (req, res) => {
 });
 
 // Define a route for /about
-app.get('/api/about', (req, res) => {
-  res.send('About Page');
-});
+// app.get('/api/about', (req, res) => {
+//   res.send('About Page');
+// });
 
 // Start the server and listen on the specified port
 app.listen(port, () => {
